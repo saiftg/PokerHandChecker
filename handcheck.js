@@ -8,16 +8,16 @@
 
 
 
-  var win1 = [];
-  var win2 = [];
+  var win1 = []; //Store player1 rank score
+  var win2 = []; //Store player2 rank score
 
-  var tb1 = [];
-  var tb2 = [];
+  var tb1 = []; //Store player1 high card
+  var tb2 = []; //Store player1 high card
 
   
 
-  var c01 = "KC JC TC QC AC";
-  var c02 = '9H 7H 8H 6H 5H';
+  var c01 = "KC JC TC QC AC"; //Player 1 Hand
+  var c02 = '9H 7H 8H 6H 5H'; // PLayer 2 Hand
 
   console.log("**************************************");
 
@@ -26,10 +26,11 @@ console.log("Player 2 Hand:  " + c02);
 
 
 
-  var t01 = (c01.split(/(?!$)/u)) ;
+  var t01 = (c01.split(/(?!$)/u)) ; //Split cards into nums and suits
   var t02 = (c02.split(/(?!$)/u)) ;
 
 
+//Replace the alphabets with numbers
 
  for (var i = 0; i < t01.length; i++)
     if (t01[i] == 'A')
@@ -70,6 +71,9 @@ console.log("Player 2 Hand:  " + c02);
 t01 = t01.sort();
 t02 = t02.sort();
 
+
+
+//Remove ''
   for (let i=0; i <= t01.length; i++){
   	if (t01[i] ===  ' '){
   		t01.splice(0,2);
@@ -86,6 +90,8 @@ t02 = t02.sort();
 
   }
 
+
+//to sort in ascending order
 function sortNumber(a,b) {
     return a - b;
 }
@@ -101,6 +107,8 @@ function sortNumber(a,b) {
 
 
 
+
+//Check player 1 hand
 function checkHand1(){
 
 
@@ -171,6 +179,9 @@ function checkHand1(){
 };
 
 
+
+
+//check player 2 hand
 function checkHand2(){
 
 
@@ -240,6 +251,10 @@ function checkHand2(){
 
 };
 
+
+
+
+//Player 1 VS Player 2
 function whoWins(){
 
 		checkHand1();
